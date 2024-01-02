@@ -1,6 +1,6 @@
 <?php
 
-class SignupContr
+class SignupContr extends Signup
 {
     private $uid;
     private $pwd;
@@ -54,6 +54,17 @@ class SignupContr
     {
         $result = null;
         if ($this->pwd !== $this->pwdRepeat) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+        return $result;
+    }
+
+    private function userTaken()
+    {
+        $result = null;
+        if (parent::checkUser($this->uid, $this->email)) {
             $result = false;
         } else {
             $result = true;
