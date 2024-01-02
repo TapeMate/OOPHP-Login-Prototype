@@ -36,4 +36,17 @@ class SignupContr
         }
         return $result;
     }
+
+    // DOCU!
+    // build in PHP function to check if email is valid
+    private function invalidEmail()
+    {
+        $result = null;
+        if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+        return $result;
+    }
 }
