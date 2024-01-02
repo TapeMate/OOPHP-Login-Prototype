@@ -16,6 +16,9 @@ class Signup extends Dbh
             header("location: ../index.php?error=stmtfailed");
             exit();
         }
+
+        $sql = null;
+        $stmt = null;
     }
 
     protected function checkUser($uid, $email)
