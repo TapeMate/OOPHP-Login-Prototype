@@ -2,17 +2,27 @@
 
 class SignupContr
 {
-
     private $uid;
     private $pwd;
-    private $pwdrepeat;
+    private $pwdRepeat;
     private $email;
 
-    public function __construct($uid, $pwd, $pwdrepeat, $email)
+    public function __construct($uid, $pwd, $pwdRepeat, $email)
     {
         $this->uid = $uid;
         $this->pwd = $pwd;
-        $this->pwdrepeat = $pwdrepeat;
+        $this->pwdRepeat = $pwdRepeat;
         $this->email = $email;
+    }
+
+    private function emptyInput()
+    {
+        $result = null;
+        if (empty($this->uid) || empty($this->pwd) || empty($this->pwdRepeat) || empty($this->email)) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+        return $result;
     }
 }
