@@ -16,7 +16,7 @@ class SignupContr extends Signup
     }
 
     // error handling
-    private function signupUser()
+    public function signupUser()
     {
         if ($this->emptyInput() == false) {
             header("location: ../index.php?error=emptyinput");
@@ -95,7 +95,7 @@ class SignupContr extends Signup
     private function uidTaken()
     {
         $result = null;
-        if (parent::checkUser($this->uid, $this->email)) {
+        if (!parent::checkUser($this->uid, $this->email)) {
             $result = false;
         } else {
             $result = true;
