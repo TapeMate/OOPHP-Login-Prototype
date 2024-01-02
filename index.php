@@ -19,10 +19,12 @@ session_start();
             <li><a href="#">
                     <?php echo $_SESSION["useruid"]; ?>
                 </a></li>
+            <li><a href="includes/logout.inc.php">Logout</a></li>
             <?php
         } else {
             ?>
             <li><a href="#">SIGN UP</a></li>
+            <li><a href="#">LOGIN</a></li>
             <?php
         }
         ?>
