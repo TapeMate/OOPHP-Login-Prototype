@@ -15,6 +15,35 @@ class SignupContr extends Signup
         $this->email = $email;
     }
 
+    // error handling
+    private function signupUser()
+    {
+        if ($this->emptyInput() == false) {
+            header("location: ../index.php?error=emptyinput");
+            exit();
+        }
+
+        if ($this->invalidUid() == false) {
+            header("location: ../index.php?error=username");
+            exit();
+        }
+
+        if ($this->invalidEmail() == false) {
+            header("location: ../index.php?error=email");
+            exit();
+        }
+
+        if ($this->pwdMatch() == false) {
+            header("location: ../index.php?error=passwordmatch");
+            exit();
+        }
+
+        if ($this->uidTaken() == false) {
+            header("location: ../index.php?error=useroremailtaken");
+            exit();
+        }
+    }
+
     private function emptyInput()
     {
         $result = null;
@@ -61,7 +90,7 @@ class SignupContr extends Signup
         return $result;
     }
 
-    private function userTaken()
+    private function uidTaken()
     {
         $result = null;
         if (parent::checkUser($this->uid, $this->email)) {
