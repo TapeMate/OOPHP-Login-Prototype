@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +12,22 @@
 </head>
 
 <body>
+    <div class="container">
+        <?php
+        if (isset($_SESSION["userid"])) {
+            ?>
+            <li><a href="#">
+                    <?php echo $_SESSION["useruid"]; ?>
+                </a></li>
+            <?php
+        } else {
+            ?>
+            <li><a href="#">SIGN UP</a></li>
+            <?php
+        }
+        ?>
+    </div>
+
     <section>
         <div class="wrapper">
             <div class="index-login-signup">
