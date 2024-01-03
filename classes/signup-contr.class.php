@@ -68,7 +68,6 @@ class SignupContr extends Signup
         return $result;
     }
 
-    // DOCU!
     // build in PHP function to check if email is valid
     private function invalidEmail()
     {

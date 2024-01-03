@@ -9,9 +9,9 @@ if (isset($_POST["submit"])) {
     $email = $_POST["email"];
 
     // Instantiate SignupContr class
-    include_once "../classes/dbh.classes.php";
-    include_once "../classes/signup.classes.php";
-    include_once "../classes/signup-contr.classes.php";
+    include_once "../classes/dbh.class.php";
+    include_once "../classes/signup.class.php";
+    include_once "../classes/signup-contr.class.php";
     $signup = new SignupContr($uid, $pwd, $pwdrepeat, $email);
 
     // Running error handlers and user signup

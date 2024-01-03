@@ -7,9 +7,9 @@ if (isset($_POST["submit"])) {
     $pwd = $_POST["pwd"];
 
     // Instantiate SignupContr class
-    include_once "../classes/dbh.classes.php";
-    include_once "../classes/login.classes.php";
-    include_once "../classes/login-contr.classes.php";
+    include_once "../classes/dbh.class.php";
+    include_once "../classes/login.class.php";
+    include_once "../classes/login-contr.class.php";
     $login = new LoginContr($uid, $pwd);
 
     // Running error handlers and user signup
